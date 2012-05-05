@@ -715,7 +715,13 @@ function opentok_invite_action($node, $context=array()) {
     	drupal_set_message("You just invited".$usernameList."to a conference. The link to the conference room was sent to your email address.");
 	}
 }
-
+/**
+ * 
+ * Implementation of hook_mail. Function building the emails sent via opentok module
+ * @param unknown_type $key
+ * @param unknown_type $message
+ * @param unknown_type $params
+ */
 function opentok_mail($key, &$message, $params) {
 	global $user;
 	$topic = $params['topic'];
